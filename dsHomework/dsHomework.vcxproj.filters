@@ -32,5 +32,8 @@
     <ClInclude Include="EricUtil.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="EricTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

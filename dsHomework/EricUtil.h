@@ -1,8 +1,8 @@
-#ifndef ERIC_UTIL
-#define ERIC_UTIL
+#ifndef ERIC_UTIL_H
+#define ERIC_UTIL_H
 
 namespace eric {
-	// cp array 
+	// cp array
 	// @param target array pointer
 	// @param _start index to start copy
 	// @param _end index to end copy

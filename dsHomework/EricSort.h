@@ -1,5 +1,5 @@
-#ifndef ERIC_SORT
-#define ERIC_SORT
+#ifndef ERIC_SORT_H
+#define ERIC_SORT_H
 
 namespace eric {
 	// quick sort
