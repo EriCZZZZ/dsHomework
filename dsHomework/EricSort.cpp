@@ -8,6 +8,7 @@ void eric::qsort(int* target, int indexStart, int indexEnd) {
 	int key = target[indexStart];
 	// flag == 0 --> end=>start | flag == 1 --> start=>end
 	bool flag = 0;
+
 	while (indexStart < indexEnd) {
 		if (0 == flag) {
 			if (target[indexEnd] < key) {
