@@ -1,4 +1,5 @@
 #include "EricSort.h"
+#include "EricUtil.h"
 #include <cmath>
 
 void eric::qsort(int* target, int indexStart, int indexEnd) {
@@ -41,4 +42,43 @@ void eric::qsort(int* target, int indexStart, int indexEnd) {
 		eric::qsort(target, indexEnd + 1, indexOriginEnd);
 	}
 	return;
+}
+
+void eric::msort(int* target, int indexStart, int indexEnd) {
+	int length = indexEnd - indexStart + 1;
+	if (length > 2) {
+		eric::msort(target, indexStart, indexStart + (length - 2) / 2);
+		eric::msort(target, indexStart + length / 2, indexEnd);
+	}                       
+
+	if (length < 2) {
+		return;
+	}
+	// merge
+	int* right = eric::copyArray(target, indexStart, indexStart + (length - 2) / 2);
+	int* left = eric::copyArray(target, indexStart + length / 2, indexEnd);
+
+	int lengthRight = (length - 2) / 2 + 1;
+	int lengthLeft = indexEnd - (indexStart + length / 2) + 1;
+	int countRight;
+	int countLeft;
+	int index;
+	for (index = indexStart, countRight = 0, countLeft = 0; countRight < lengthRight && countLeft < lengthLeft; index++) {
+		if (right[countRight] < left[countLeft]) {
+			target[index] = right[countRight++];
+		}
+		else {
+			target[index] = left[countLeft++];
+		}
+	}
+	if (countRight < lengthRight) {
+		while (countRight < lengthRight) {
+			target[index++] = right[countRight++];
+		}
+	}
+	else if (countLeft < lengthLeft) {
+		while (countLeft < lengthLeft) {
+			target[index++] = left[countLeft++];
+		}
+	}
 }
