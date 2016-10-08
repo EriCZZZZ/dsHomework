@@ -24,6 +24,9 @@
     <ClCompile Include="EricUtil.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EricBinarySearchTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EricSort.h">
@@ -33,6 +36,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="EricTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EricBinarySearchTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

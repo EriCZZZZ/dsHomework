@@ -110,11 +110,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EricBinarySearchTree.cpp" />
     <ClCompile Include="EricSort.cpp" />
     <ClCompile Include="EricUtil.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EricBinarySearchTree.h" />
     <ClInclude Include="EricSort.h" />
     <ClInclude Include="EricTree.h" />
     <ClInclude Include="EricUtil.h" />
