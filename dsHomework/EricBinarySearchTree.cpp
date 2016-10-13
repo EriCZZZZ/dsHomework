@@ -14,6 +14,7 @@ eric::PBSTNode eric::initBinSearchTreeNode(int value) {
 	nodeP->value = value;
 	nodeP->leftChild = nullptr;
 	nodeP->rightChild = nullptr;
+	return nodeP;
 }
 
 void eric::insertNode2BST(eric::PBSTRoot rootP, eric::PBSTNode newNodeP) {

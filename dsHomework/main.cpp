@@ -1,46 +1,33 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include "EricSort.h"
+#include "EricNumHash.h"
 
-#include "EricUtil.h"
-
-#define count 10000
+// hash homework
+// author : EriCZZZZ
+// time : 2016-10-12 02:17:21
 
 int main(void) {
-	srand(clock());
-	int target[count];
+	PHead* hashArray = initHashArray();
+	int source[] = { 13, 27, 61, 25, 33, 39, 41, 83, 45, 77, 35, 19, 66, 49, 56, 22, 50, 71, 88, 28 };
 
-	for (int i = 0; i < count; i++) {
-		target[i] = rand();
+	int i = 0;
+	while (i < sizeof(source) / sizeof(int)) {
+		insert2HashArray(hashArray, source[i++]);
 	}
 
-	std::cout << "start: " << clock() << std::endl;
-
-	int time = clock();
-
-	eric::qsort(target, 0, count - 1);
-	
-	std::cout << "qsort: " << clock() - time << std::endl;
-
-	time = clock();
-
-	eric::msort(target, 0, count - 1);
-
-	std::cout << "msort: " << clock() - time << std::endl;
-
-	for (int i = 0; i < count; i++) {
-		std::cout << target[i] << std::endl;
+	i = 0;
+	while (i < sizeof(source) / sizeof(int)) {
+		std::cout << source[i] << " : " << isNumExist(hashArray, source[i]) << std::endl;
+		i++;
 	}
-	/*for (int i = 0; i < count; i++) {
-		for (int j = count - 1; j > i; j--) {
-			if (target[j] < target[j - 1]) {
-				int temp = target[j];
-				target[j] = target[j - 1];
-				target[j - 1] = temp;
-			}
-		}
-	}*/
+	// to check is find work.
+	i = 0;
+	while (i < 100) {
+		std::cout << i << " : " << isNumExist(hashArray, i) << std::endl;
+		i++;
+	}
+
+	freeHashArray(hashArray);
+
 	system("pause");
 	return 0;
 }
