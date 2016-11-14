@@ -1,33 +1,27 @@
 #include <iostream>
-#include "EricNumHash.h"
+#include "EricHeapSort.h"
+#include <random>
+#include <ctime>
 
-// hash homework
-// author : EriCZZZZ
-// time : 2016-10-12 02:17:21
+#define SOURCE_LENGTH 100000
 
-int main(void) {
-	PHead* hashArray = initHashArray();
-	int source[] = { 13, 27, 61, 25, 33, 39, 41, 83, 45, 77, 35, 19, 66, 49, 56, 22, 50, 71, 88, 28 };
-
-	int i = 0;
-	while (i < sizeof(source) / sizeof(int)) {
-		insert2HashArray(hashArray, source[i++]);
+int main() {
+	srand(clock());
+	//int source[SOURCE_LENGTH] = { 1, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3 };
+	int* source = (int*)malloc(sizeof(int) * SOURCE_LENGTH);
+	for (int i = 0; i < SOURCE_LENGTH; i++) {
+		source[i] = rand();
 	}
-
-	i = 0;
-	while (i < sizeof(source) / sizeof(int)) {
-		std::cout << source[i] << " : " << isNumExist(hashArray, source[i]) << std::endl;
-		i++;
+	eric::HeapInfo heap;
+	eric::initHeap(&heap, source, SOURCE_LENGTH);
+	std::cout << clock() << std::endl;
+	for (int i = 0; i < SOURCE_LENGTH; i++) {
+		//std::cout << eric::heapPop(&heap) << std::endl;
+		eric::heapPop(&heap);
 	}
-	// to check is find work.
-	i = 0;
-	while (i < 100) {
-		std::cout << i << " : " << isNumExist(hashArray, i) << std::endl;
-		i++;
-	}
-
-	freeHashArray(hashArray);
+	std::cout << clock() << std::endl;
 
 	system("pause");
+
 	return 0;
 }

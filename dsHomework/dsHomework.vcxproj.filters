@@ -30,6 +30,18 @@
     <ClCompile Include="EricNumHash.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EricBinarySearchArrayUtil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="m10task1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="m10task2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EricHeapSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EricSort.h">
@@ -45,6 +57,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="EricNumHash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EricBinarySearchArrayUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="m10task1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="m10task2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EricHeapSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
